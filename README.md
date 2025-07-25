@@ -7,4 +7,4 @@ As an example, to predict the period 2023, we use vegetation data from 2022 and 
 The objective of this project is to demonstrate the potential of deep learning in predicting wildfires across Canada.   
 The model developed here serves as a proof of concept and is not yet fully optimized, its goal is to offer valuable insights into how advanced machine learning techniques can be applied to wildfire prediction.  
 
-> BlazeAI Website: https://blazeai.framer.website/
+> Check out BlazeAI's Website: https://blazeai.framer.website/
