@@ -1,5 +1,4 @@
-## Wildfire Prediction
-<h3>Canada Wildfire Prediction Using Deep Learning.</h3> 
+## Canada Wildfire Prediction Using Deep Learning
 The objective is to predict the future fire occurrences for the next year given various inputs from the past year and current year.    
 The problem of wildfire prediction is defined as semantic segmentation problem here meaning each pixel is assigned a probability between 0 and 1 of being the class fire.  
 The type of input data has an impact on the temporal extent chosen as input to the model.  
