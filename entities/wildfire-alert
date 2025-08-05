@@ -1,0 +1,92 @@
+{
+  "name": "WildfireAlert",
+  "type": "object",
+  "properties": {
+    "alert_type": {
+      "type": "string",
+      "enum": [
+        "risk_warning",
+        "fire_detected",
+        "evacuation_notice",
+        "weather_alert"
+      ],
+      "description": "Type of alert being issued"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "critical",
+        "emergency"
+      ],
+      "description": "Alert severity level"
+    },
+    "location_name": {
+      "type": "string",
+      "description": "Affected location name"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude coordinate"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude coordinate"
+    },
+    "radius_km": {
+      "type": "number",
+      "description": "Alert radius in kilometers"
+    },
+    "title": {
+      "type": "string",
+      "description": "Alert headline"
+    },
+    "message": {
+      "type": "string",
+      "description": "Detailed alert message"
+    },
+    "issued_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the alert was issued"
+    },
+    "expires_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the alert expires"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether the alert is currently active"
+    },
+    "affected_population": {
+      "type": "number",
+      "description": "Estimated number of people affected"
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of recommended actions for residents"
+    }
+  },
+  "required": [
+    "alert_type",
+    "severity",
+    "location_name",
+    "title",
+    "message",
+    "issued_date"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

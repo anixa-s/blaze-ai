@@ -1,0 +1,77 @@
+{
+  "name": "HistoricalFire",
+  "type": "object",
+  "properties": {
+    "fire_name": {
+      "type": "string",
+      "description": "Official name of the wildfire"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the fire started"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the fire was contained"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Fire origin latitude"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Fire origin longitude"
+    },
+    "area_burned_hectares": {
+      "type": "number",
+      "description": "Total area burned in hectares"
+    },
+    "cause": {
+      "type": "string",
+      "enum": [
+        "lightning",
+        "human",
+        "equipment",
+        "unknown"
+      ],
+      "description": "Fire cause category"
+    },
+    "province": {
+      "type": "string",
+      "description": "Canadian province where fire occurred"
+    },
+    "structures_lost": {
+      "type": "number",
+      "description": "Number of structures destroyed"
+    },
+    "evacuation_count": {
+      "type": "number",
+      "description": "Number of people evacuated"
+    },
+    "suppression_cost": {
+      "type": "number",
+      "description": "Fire suppression cost in CAD"
+    },
+    "final_fire_weather_index": {
+      "type": "number",
+      "description": "Fire Weather Index at time of ignition"
+    }
+  },
+  "required": [
+    "fire_name",
+    "start_date",
+    "latitude",
+    "longitude",
+    "province"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}

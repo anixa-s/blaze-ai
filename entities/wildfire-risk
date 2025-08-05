@@ -1,0 +1,92 @@
+{
+  "name": "WildfireRisk",
+  "type": "object",
+  "properties": {
+    "location_name": {
+      "type": "string",
+      "description": "Name of the monitored location"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Latitude coordinate"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Longitude coordinate"
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": [
+        "very_low",
+        "low",
+        "moderate",
+        "high",
+        "extreme"
+      ],
+      "description": "Current wildfire risk level"
+    },
+    "risk_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Numerical risk score (0-100)"
+    },
+    "temperature": {
+      "type": "number",
+      "description": "Current temperature in Celsius"
+    },
+    "humidity": {
+      "type": "number",
+      "description": "Relative humidity percentage"
+    },
+    "wind_speed": {
+      "type": "number",
+      "description": "Wind speed in km/h"
+    },
+    "precipitation": {
+      "type": "number",
+      "description": "Recent precipitation in mm"
+    },
+    "vegetation_dryness": {
+      "type": "string",
+      "enum": [
+        "very_wet",
+        "wet",
+        "moderate",
+        "dry",
+        "very_dry"
+      ],
+      "description": "Vegetation moisture level"
+    },
+    "fire_weather_index": {
+      "type": "number",
+      "description": "Canadian Fire Weather Index value"
+    },
+    "predicted_for_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date this prediction is for"
+    },
+    "confidence_level": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Prediction confidence percentage"
+    }
+  },
+  "required": [
+    "location_name",
+    "latitude",
+    "longitude",
+    "risk_level",
+    "predicted_for_date"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  }
+}
